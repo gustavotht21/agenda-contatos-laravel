@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -18,6 +19,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/home", function () {
-    return Inertia::render("home");
-});
+Route::get('/home', function () {
+    return Inertia::render('Home');
+})->middleware(['auth', 'verified'])->name('home');
+
+Route::get("contact/add", [ContactController::class, "create"])
+    ->name("contact.create");
+
+Route::post("contact/add", [ContactController::class, "store"])
+    ->name("contact.store");
+
+Route::get("contact/view", [ContactController::class, "show"])
+    ->name("contact.view");
+
+Route::get("contact/edit/{contact}", [ContactController::class, "edit"])
+    ->name("contact.edit");
+
+Route::post("contact/edit/{contact}", [ContactController::class, "editStore"])
+    ->name("contact.storeEdit");
+
+Route::post("contact/delete/{contact}", [ContactController::class, "destroy"])
+    ->name("contact.delete");
