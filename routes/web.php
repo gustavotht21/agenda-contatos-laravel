@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Auth\Controllers\ContactController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -29,7 +29,7 @@ Route::get("contact/add", [ContactController::class, "create"])
 Route::post("contact/add", [ContactController::class, "store"])
     ->name("contact.store");
 
-Route::get("contact/view", [ContactController::class, "show"])
+Route::get("contact/view", [ContactController::class, "index"])
     ->name("contact.view");
 
 Route::get("contact/edit/{contact}", [ContactController::class, "edit"])

@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class ContactController extends Controller
 {
@@ -11,7 +12,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        dd("index");
     }
 
     /**
@@ -19,7 +20,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render("RegisterContact");
     }
 
     /**
@@ -27,7 +28,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd("store");
     }
 
     /**
@@ -35,7 +36,7 @@ class ContactController extends Controller
      */
     public function show(string $id)
     {
-        //
+        dd("show");
     }
 
     /**
@@ -43,7 +44,7 @@ class ContactController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        dd("edit");
     }
 
     /**
@@ -51,7 +52,7 @@ class ContactController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        dd("update");
     }
 
     /**
@@ -59,6 +60,6 @@ class ContactController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        dd("destroy");
     }
 }
