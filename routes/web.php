@@ -29,6 +29,9 @@ Route::get("contact/add", [ContactController::class, "create"])
 Route::post("contact/add", [ContactController::class, "store"])
     ->name("contact.store");
 
+Route::get("contact/successAdd", [ContactController::class, "successStore"])
+    ->name("contact.successStore");
+
 Route::get("contact/view", [ContactController::class, "index"])
     ->name("contact.view");
 

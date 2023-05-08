@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Models\Country;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -20,7 +22,8 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return Inertia::render("RegisterContact");
+        $countries = Country::all();
+        return Inertia::render("RegisterContact", ["countries" => $countries]);
     }
 
     /**
@@ -28,7 +31,30 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        dd("store");
+        $request->validate([
+            'name' => "required",
+            'email' => "required|unique:contacts",
+            'sex' => "required",
+            'birth' => "required",
+            'phone' => "required",
+            'country' => "required",
+        ]);
+
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->sex = $request->sex;
+        $contact->birth = $request->birth;
+        $contact->phone = $request->phone;
+        $contact->country = $request->country;
+        $contact->save();
+
+        return redirect()->route("contact.successStore");
+    }
+
+    public function successStore()
+    {
+        return Inertia::render("SuccessAddContact");
     }
 
     /**
