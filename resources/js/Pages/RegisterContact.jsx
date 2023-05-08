@@ -1,11 +1,11 @@
 import React from "react";
-import {Head, Link, useForm, usePage} from "@inertiajs/inertia-react";
+import {Link, useForm} from "@inertiajs/inertia-react";
 import InputMask from 'react-input-mask'
-import NavBar from "../Components/NavBar";
+import { Head } from '@inertiajs/react';
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 
-export default function home() {
+export default function RegisterContact({countries, auth}) {
 
-    const {countries} = usePage().props
     const { data, setData, post, processing, errors } = useForm({
         name: '',
         email: '',
@@ -27,9 +27,11 @@ export default function home() {
     };
 
     return (
-        <>
-            <NavBar />
-            <Head title={"Cadastrar contato"}></Head>
+        <AuthenticatedLayout
+            user={auth.user}
+            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Cadastrar contato</h2>}
+        >
+            <Head title="Cadastrar contato" />
 
             <div className="flex justify-center mt-6">
                 <form className={"w-3/4"} onSubmit={submit}>
@@ -156,9 +158,9 @@ export default function home() {
                     </div>
 
                     <div className="mt-6 flex items-center justify-end gap-x-6">
-                        <Link href={route("home")}>
+                        <Link href={route("dashboard")}>
                             <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
-                            Cancelar
+                                Cancelar
                             </button>
                         </Link>
                         <button
@@ -170,6 +172,6 @@ export default function home() {
                     </div>
                 </form>
             </div>
-        </>
+        </AuthenticatedLayout>
     )
 }

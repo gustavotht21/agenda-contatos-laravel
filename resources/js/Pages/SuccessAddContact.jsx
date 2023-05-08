@@ -1,11 +1,9 @@
 import React from "react";
 import {Head, Link} from "@inertiajs/inertia-react";
-import NavBar from "../Components/NavBar";
 
 export default function SuccessAddContact() {
     return (
         <div>
-            <NavBar />
             <Head title={"Cadastrar contato"}></Head>
 
             <div className="flex justify-center items-center flex-col">
