@@ -10,7 +10,7 @@ let opts = [
 let linksOpts = {
     "home": "Home",
     "contact.create": "Adicionar contato",
-    "Ver contatos": "contact.view",
+    "contact.view": "Ver contatos",
 }
 
 export default function NavBar() {
