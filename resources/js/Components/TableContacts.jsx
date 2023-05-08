@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "./NavBar";
 import {Head, Link} from "@inertiajs/inertia-react";
 import OptionsTable from "./OptionsTable";
 import ComponentDelete from "./ComponentDelete";
@@ -39,9 +38,6 @@ export default function TableContacts({contacts}) {
 
     return (
         <>
-            <NavBar />
-            <Head title={"Visualizar contatos"}></Head>
-
             <div className={"flex justify-center mt-12"}>
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table className="w-full text-sm text-left text-gray-400">
@@ -72,9 +68,9 @@ export default function TableContacts({contacts}) {
                         </thead>
                         <tbody>
                         {contacts.map((contact) => {
-                            return <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            return <tr className="bg-white border-b">
                                 <th scope="row"
-                                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                     {contact.name}
                                 </th>
                                 <td className="px-6 py-4">
