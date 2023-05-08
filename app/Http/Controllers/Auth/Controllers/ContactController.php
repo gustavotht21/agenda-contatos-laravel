@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth\Controllers;
 
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class ContactController extends Controller
 {
@@ -19,7 +20,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render("AddContact");
     }
 
     /**
