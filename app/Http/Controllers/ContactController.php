@@ -14,7 +14,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        dd("index");
+        $contacts = Contact::all();
+        return Inertia::render("ViewContact", ["contacts" => $contacts]);
     }
 
     /**
