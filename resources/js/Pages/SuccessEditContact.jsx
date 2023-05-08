@@ -3,14 +3,14 @@ import {Link} from "@inertiajs/inertia-react";
 import { Head } from '@inertiajs/react';
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 
-export default function SuccessAddContact({auth}) {
+export default function SuccessEditContact({auth}) {
     return (
         <AuthenticatedLayout
             user={auth.user}
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Sucesso ao editar contato</h2>}
         >
 
-        <Head title={"Cadastrar contato"}></Head>
+            <Head title={"Sucesso ao editar contato"}></Head>
 
             <div className="flex justify-center items-center flex-col">
                 <div id="add-success"
@@ -26,20 +26,12 @@ export default function SuccessAddContact({auth}) {
                         </svg>
                         <span className="sr-only">Check icon</span>
                     </div>
-                    <div className="ml-3 text-sm font-normal">Contato cadastrado com sucesso</div>
+                    <div className="ml-3 text-sm font-normal">Contato editado com sucesso</div>
                 </div>
                 <div className={"w-3/4 flex justify-around mt-16"}>
                     <Link href={route("contact.view")}>
                         <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
                             Ver contatos salvos
-                        </button>
-                    </Link>
-                    <Link href={route("contact.create")}>
-                        <button
-                            type="button"
-                            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                        >
-                            Cadastrar outro contato
                         </button>
                     </Link>
 

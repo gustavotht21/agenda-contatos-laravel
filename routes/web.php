@@ -51,8 +51,11 @@ Route::get("contact/view", [ContactController::class, "index"])
 Route::get("contact/edit/{contact}", [ContactController::class, "edit"])
     ->middleware(['auth', 'verified'])->name("contact.edit");
 
-Route::post("contact/edit/{contact}", [ContactController::class, "editStore"])
-    ->middleware(['auth', 'verified'])->name("contact.storeEdit");
+Route::post("contact/edit/{contact}", [ContactController::class, "update"])
+    ->middleware(['auth', 'verified'])->name("contact.update");
+
+Route::get("contact/successEdit", [ContactController::class, "successEdit"])
+    ->middleware(['auth', 'verified'])->name("contact.successUpdate");
 
 Route::post("contact/delete/{contact}", [ContactController::class, "destroy"])
     ->middleware(['auth', 'verified'])->name("contact.delete");
