@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Country;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class ContactController extends Controller
@@ -14,7 +15,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::all();
+        $contacts = Contact::all()->where("user_id", '=', Auth::user()->id);
+
         return Inertia::render("ViewContact", ["contacts" => $contacts]);
     }
 
@@ -48,6 +50,7 @@ class ContactController extends Controller
         $contact->birth = $request->birth;
         $contact->phone = $request->phone;
         $contact->country = $request->country;
+        $contact->user_id = Auth::user()->id;
         $contact->save();
 
         return redirect()->route("contact.successStore");

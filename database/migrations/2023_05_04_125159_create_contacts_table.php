@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date("birth");
             $table->string("phone");
             $table->string("country");
+            $table->foreignId("user_id")->references('id')->on('users');
             $table->timestamps();
         });
     }
