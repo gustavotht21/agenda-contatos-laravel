@@ -100,13 +100,13 @@ class ContactController extends Controller
             ]);
         }
 
-//        $contact->name = $request->name;
-//        $contact->email = $request->email;
-//        $contact->sex = $request->sex;
-//        $contact->birth = $request->birth;
-//        $contact->phone = $request->phone;
-//        $contact->country = $request->country;
-//        $contact->save();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->sex = $request->sex;
+        $contact->birth = $request->birth;
+        $contact->phone = $request->phone;
+        $contact->country = $request->country;
+        $contact->save();
 
         return redirect()->route("contact.successUpdate");
     }
