@@ -119,8 +119,9 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Contact $contact)
     {
-        dd("destroy");
+        $contact->delete();
+        return redirect()->route("contact.view");
     }
 }
