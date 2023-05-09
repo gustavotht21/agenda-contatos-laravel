@@ -17,13 +17,13 @@ export default function TableContacts({contacts}) {
                 )
             case 'Excluir':
                 const deleteComponentData = {
-                    routePost: "",
+                    routePost: "contact.delete",
                     item: "contato",
                     id: id
                 }
                 return (
                     <ComponentDelete routePost={deleteComponentData.routePost} item={deleteComponentData.item}
-                                     id={deleteComponentData.id}/>
+                     id={deleteComponentData.id}/>
                 )
         }
     }
