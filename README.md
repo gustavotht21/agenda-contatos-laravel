@@ -45,7 +45,7 @@ Projeto feito utilizando o Laravel para a construção de um sistema de cadastro
 
 ## 📂 Acesso ao projeto
 
- Você pode acessar o projeto <!-- através [desse link](https://phpmysqli.devborges.tech/) ou  -->[baixando-o](https://github.com/gustavotht21/curso-php-mysqli/archive/refs/heads/main.zip) e iniciando-o na IDE de sua preferência.
+ Você pode acessar o projeto através [desse link](https://agendacontatos.devborges.tech/).
 
 ## 👤 Autor
 
