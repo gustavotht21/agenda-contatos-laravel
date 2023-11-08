@@ -23,7 +23,7 @@ export default function Welcome() {
 
             <div className={"w-screen flex justify-around items-center pt-8"}>
                 <div className={"w-3/12"}>
-                    <p className={"text-lg text-zinc-900 font-medium mt-4 break-word text-justify"}>O sistema de cadastro de contatos mais revolucionário já criado. Com uma interface simples, porém sofisticada e elegante, o ProContact engloba o que há de melhor em um sistema.</p>
+                    <p className={"text-lg text-zinc-900 font-medium mt-4 break-word text-justify"}>O sistema de cadastro de contatos mais revolucionário já criado. Com uma interface simples, sofisticada e elegante, o ProContact engloba o que há de melhor em um sistema.</p>
                     <div className={"mt-2 flex gap-x-6"}>
                         <Link className={"text-indigo-500 underline"} href={route("register")}> Tentar agora</Link>
                         <Link className={"text-indigo-500 underline"} href={route("login")}> Log in</Link>
